@@ -5,28 +5,19 @@
     <title>D3 Test</title>
     <script type="text/javascript" src="d3/d3.js"></script>
     <style type="text/css">
-      div.bar {
-        display: inline-block;
-        width: 20px;
-        height: 75px;
-        background-color: teal;
-        margin-right: 2px;
-      }
       </style>
   </head>
   <body>
     <script type="text/javascript">
-    var dataset = [5, 10, 15, 20, 25];
+    //Width and height
+    var w = 500;
+    var h = 50;
 
-    d3.select("body").selectAll("div")
-      .data(dataset)
-      .enter()
-      .append("div")
-      .attr("class", "bar")
-      .style("height", function(d) {
-        var barHeight = d * 5 //scales by factor of 5
-        return barHeight + "px"
-      });
+    //Create SVG element
+    var svg = d3.select("body")
+                            .append("svg");
+                            .attr("width", w)
+                            .attr("height", h);
     </script>
   </body>
   </html>
