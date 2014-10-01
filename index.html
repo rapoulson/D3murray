@@ -24,9 +24,9 @@
     <script type="text/javascript">
 
     //Width and height
-    var w = 500;
-    var h = 300;
-    var padding = 20;
+    var w = 800;
+    var h = 400;
+    var padding = 30;
 
     //define data set
     var dataset = [
@@ -54,11 +54,16 @@
                         .domain([0, d3.max(dataset, function(d) {return d[1];})])
                         .range([2, 5]);
 
-    //define X axis
+    //define X, Y axis
     var xAxis = d3.svg.axis()
                         .scale(xScale)
                         .orient("bottom")
                         .ticks(5);
+
+    var yAxis = d3.svg.axis()
+                      .scale(yScale)
+                      .orient("left")
+                      .ticks(5);
 
     //Create SVG element
     var svg = d3.select("body")
@@ -102,6 +107,12 @@
         .attr("class", "axis")
         .attr("transform", "translate(0," + (h - padding) +")")
         .call(xAxis);
+
+    //Create Y axis
+    svg.append("g")
+        .attr("class", "axis")
+        .attr("transform", "translate(" + padding + ",0)")
+        .call(yAxis);
 
     
     </script>
