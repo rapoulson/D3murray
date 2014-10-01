@@ -25,8 +25,8 @@
 
     //Width and height
     var w = 500;
-    var h = 100;
-    var padding = 1;
+    var h = 300;
+    var padding = 20;
 
     //define data set
     var dataset = [
@@ -57,7 +57,8 @@
     //define X axis
     var xAxis = d3.svg.axis()
                         .scale(xScale)
-                        .orient("bottom");
+                        .orient("bottom")
+                        .ticks(5);
 
     //Create SVG element
     var svg = d3.select("body")
